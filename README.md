@@ -123,5 +123,5 @@ Right after the examples — this is helpful for learners or collaborators.
 **Abdelrhman Afify**  
 _Data Engineer passionate about modern data pipelines and analytics engineering._
 
-- [LinkedIn](https://www.linkedin.com/in/abdelrhmanafify)
+- [LinkedIn](https://www.linkedin.com/in/abdelrhman-afify-147282234/)
 - [GitHub](https://github.com/AbdoAfify)
