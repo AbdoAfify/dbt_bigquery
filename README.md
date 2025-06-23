@@ -1,4 +1,5 @@
 # dbt_bigquery
+
 End-to-end dbt data pipeline project using BigQuery to model and analyze sales data. Includes raw ingestion, staging, transformation layers, and documentation.
 
 # Sales Analytics with dbt & BigQuery
@@ -31,6 +32,7 @@ This repository contains a sales analytics pipeline built using **dbt** on **Big
 
 ## 📁 Project Structure
 
+```text
 sales_analytics/
 ├── models/
 │   ├── staging/                 # Cleans and prepares raw data
@@ -43,38 +45,37 @@ sales_analytics/
 │   └── dynamic_partition.sql    # Macro for recent/historical partitioning
 │
 ├── tests/                       # dbt schema tests
-│   └── schema.yml               # Column-level tests for sales_final model
+│   └── schema.yml               # Column-level tests and model documentation
 │
 ├── dbt_project.yml              # Main dbt project config
 ├── profiles.yml (local)         # User-specific connection settings (not committed)
 ├── README.md                    # Project documentation
 └── target/                      # Compiled SQL and docs (auto-generated)
+✅ Key Features
+🔁 Modular SQL modeling: Raw → Staging → Mart layers
 
+🧠 Dynamic macros: Partition rows into recent or historical buckets
 
----
+🧪 Data testing: Not-null tests for key columns (defined in schema.yml)
 
-## ✅ Key Features
+📚 Auto documentation: Interactive lineage and metadata with dbt docs
 
-- 🔁 **Modular SQL modeling**: Raw → Staging → Mart layers
-- 🧠 **Dynamic macros**: Partition rows into `recent` or `historical` buckets
-- 🧪 **Data testing**: Not-null tests for key columns
-- 📚 **Auto documentation**: Interactive lineage and metadata with `dbt docs`
-- 🔐 **OAuth-secured connection** to BigQuery
+🔐 OAuth-secured connection to BigQuery
 
----
+⚙️ Setup Instructions
+Prerequisites
+Python 3.9+
 
-## ⚙️ Setup Instructions
+dbt CLI (pip install dbt-bigquery)
 
-### Prerequisites
+Google Cloud SDK
 
-- Python 3.9+
-- dbt CLI (`pip install dbt-bigquery`)
-- Google Cloud SDK
-- BigQuery access (with project & dataset ready)
+BigQuery access (with project & dataset ready)
 
-### Steps
-
-```bash
+Steps
+bash
+Copy
+Edit
 # Authenticate with GCP
 gcloud auth application-default login
 
@@ -86,9 +87,45 @@ dbt debug
 dbt compile
 dbt run
 
-# Run tests
+# Run tests (uses schema.yml definitions)
 dbt test
 
-# Generate docs
+# Generate docs (uses schema.yml metadata)
 dbt docs generate
 dbt docs serve
+📈 Usage Examples
+Querying the final model in BigQuery:
+sql
+Copy
+Edit
+SELECT
+  country,
+  product_name,
+  total_orders,
+  total_revenue
+FROM `ace-amplifier-463712-b1.sales_dataset.sales_final`
+WHERE partition_group = 'recent'
+Using the custom macro in a model:
+sql
+Copy
+Edit
+{{ dynamic_partition('order_date', 'MONTH') }}
+This macro partitions your data into recent or historical based on the date interval.
+
+📚 Resources
+dbt Documentation
+
+BigQuery SQL Reference
+
+Jinja2 Templating Guide
+
+Google Cloud SDK Setup
+
+👨‍💻 Author
+Abdelrhman Afify
+Data Engineer passionate about modern data pipelines and analytics engineering.
+
+LinkedIn
+
+GitHub
+
