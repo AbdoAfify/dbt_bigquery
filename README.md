@@ -93,37 +93,7 @@ dbt test
 # Generate docs (uses schema.yml metadata)
 dbt docs generate
 dbt docs serve
-📈 Usage Examples
-Querying the final model in BigQuery:
-sql
-Copy
-Edit
-SELECT
-  country,
-  product_name,
-  total_orders,
-  total_revenue
-FROM `ace-amplifier-463712-b1.sales_dataset.sales_final`
-WHERE partition_group = 'recent'
-Using the custom macro in a model:
-sql
-Copy
-Edit
-{{ dynamic_partition('order_date', 'MONTH') }}
-This macro partitions your data into recent or historical based on the date interval.
 
-📚 Resources
-dbt Documentation
-
-BigQuery SQL Reference
-
-Jinja2 Templating Guide
-
-Google Cloud SDK Setup
-
-👨‍💻 Author
-Abdelrhman Afify
-Data Engineer passionate about modern data pipelines and analytics engineering.
 
 LinkedIn
 
