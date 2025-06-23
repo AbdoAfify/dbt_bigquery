@@ -1,6 +1,4 @@
 # dbt_bigquery
-End-to-end dbt data pipeline project using BigQuery to model and analyze sales data. Includes raw ingestion, staging, transformation layers, and documentation.
-
 # Sales Analytics with dbt & BigQuery
 
 This project demonstrates a full-stack modern data pipeline using **dbt (Data Build Tool)** and **Google BigQuery** to transform and analyze sales data.
