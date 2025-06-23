@@ -92,3 +92,25 @@ dbt test
 # Generate docs
 dbt docs generate
 dbt docs serve
+
+📈 Example Metrics
+Final model sales_final includes:
+
+Total revenue per country and product
+
+Total orders
+
+Partition label: recent vs. historical (based on order date)
+
+📚 Resources
+dbt Documentation
+
+BigQuery SQL Reference
+
+Jinja2 Template Language
+
+🧑‍💻 Author
+Abdelrhman Afify
+Data Engineer passionate about modern data pipelines and analytics engineering.
+
+LinkedIn | GitHub
