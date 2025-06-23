@@ -92,3 +92,36 @@ dbt test
 # Generate docs
 dbt docs generate
 dbt docs serve
+```
+## 📈 Usage Examples
+
+### Query from the final model:
+
+```sql
+SELECT
+  country,
+  total_orders,
+  total_revenue
+FROM `your_project.sales_dataset.sales_final`
+WHERE partition_group = 'recent'
+```
+
+---
+
+#### 🔹 2. **Resources Section**
+Right after the examples — this is helpful for learners or collaborators.
+
+```markdown
+## 📚 Resources
+
+- [dbt Documentation](https://docs.getdbt.com/)
+- [BigQuery SQL Reference](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax)
+- [Jinja2 Templates](https://jinja.palletsprojects.com/)
+```
+## 👨‍💻 Author
+
+**Abdelrhman Afify**  
+_Data Engineer passionate about modern data pipelines and analytics engineering._
+
+- [LinkedIn](https://www.linkedin.com/in/abdelrhmanafify)
+- [GitHub](https://github.com/AbdoAfify)
