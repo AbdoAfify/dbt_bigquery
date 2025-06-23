@@ -93,9 +93,3 @@ dbt test
 # Generate docs (uses schema.yml metadata)
 dbt docs generate
 dbt docs serve
-
-
-LinkedIn
-
-GitHub
-
