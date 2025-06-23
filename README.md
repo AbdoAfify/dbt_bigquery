@@ -1,5 +1,4 @@
 # dbt_bigquery
-
 End-to-end dbt data pipeline project using BigQuery to model and analyze sales data. Includes raw ingestion, staging, transformation layers, and documentation.
 
 # Sales Analytics with dbt & BigQuery
@@ -32,7 +31,6 @@ This repository contains a sales analytics pipeline built using **dbt** on **Big
 
 ## 📁 Project Structure
 
-```text
 sales_analytics/
 ├── models/
 │   ├── staging/                 # Cleans and prepares raw data
@@ -45,37 +43,38 @@ sales_analytics/
 │   └── dynamic_partition.sql    # Macro for recent/historical partitioning
 │
 ├── tests/                       # dbt schema tests
-│   └── schema.yml               # Column-level tests and model documentation
+│   └── schema.yml               # Column-level tests for sales_final model
 │
 ├── dbt_project.yml              # Main dbt project config
 ├── profiles.yml (local)         # User-specific connection settings (not committed)
 ├── README.md                    # Project documentation
 └── target/                      # Compiled SQL and docs (auto-generated)
-✅ Key Features
-🔁 Modular SQL modeling: Raw → Staging → Mart layers
 
-🧠 Dynamic macros: Partition rows into recent or historical buckets
 
-🧪 Data testing: Not-null tests for key columns (defined in schema.yml)
+---
 
-📚 Auto documentation: Interactive lineage and metadata with dbt docs
+## ✅ Key Features
 
-🔐 OAuth-secured connection to BigQuery
+- 🔁 **Modular SQL modeling**: Raw → Staging → Mart layers
+- 🧠 **Dynamic macros**: Partition rows into `recent` or `historical` buckets
+- 🧪 **Data testing**: Not-null tests for key columns
+- 📚 **Auto documentation**: Interactive lineage and metadata with `dbt docs`
+- 🔐 **OAuth-secured connection** to BigQuery
 
-⚙️ Setup Instructions
-Prerequisites
-Python 3.9+
+---
 
-dbt CLI (pip install dbt-bigquery)
+## ⚙️ Setup Instructions
 
-Google Cloud SDK
+### Prerequisites
 
-BigQuery access (with project & dataset ready)
+- Python 3.9+
+- dbt CLI (`pip install dbt-bigquery`)
+- Google Cloud SDK
+- BigQuery access (with project & dataset ready)
 
-Steps
-bash
-Copy
-Edit
+### Steps
+
+```bash
 # Authenticate with GCP
 gcloud auth application-default login
 
@@ -87,9 +86,9 @@ dbt debug
 dbt compile
 dbt run
 
-# Run tests (uses schema.yml definitions)
+# Run tests
 dbt test
 
-# Generate docs (uses schema.yml metadata)
+# Generate docs
 dbt docs generate
 dbt docs serve
