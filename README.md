@@ -49,3 +49,46 @@ sales_analytics/
 ├── profiles.yml (local)         # User-specific connection settings (not committed)
 ├── README.md                    # Project documentation
 └── target/                      # Compiled SQL and docs (auto-generated)
+
+
+---
+
+## ✅ Key Features
+
+- 🔁 **Modular SQL modeling**: Raw → Staging → Mart layers
+- 🧠 **Dynamic macros**: Partition rows into `recent` or `historical` buckets
+- 🧪 **Data testing**: Not-null tests for key columns
+- 📚 **Auto documentation**: Interactive lineage and metadata with `dbt docs`
+- 🔐 **OAuth-secured connection** to BigQuery
+
+---
+
+## ⚙️ Setup Instructions
+
+### Prerequisites
+
+- Python 3.9+
+- dbt CLI (`pip install dbt-bigquery`)
+- Google Cloud SDK
+- BigQuery access (with project & dataset ready)
+
+### Steps
+
+```bash
+# Authenticate with GCP
+gcloud auth application-default login
+
+# Install dependencies
+pip install dbt-bigquery
+
+# Initialize dbt
+dbt debug
+dbt compile
+dbt run
+
+# Run tests
+dbt test
+
+# Generate docs
+dbt docs generate
+dbt docs serve
